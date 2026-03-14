@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 01 - Hệ tính toán phân bố</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #0001;
+            padding: 32px;
+        }
+
+        h1 {
+            color: #2d6cdf;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .ip {
+            margin-top: 24px;
+            font-weight: bold;
+            color: #1a8917;
+        }
+
+        .welcome {
+            margin: 18px 0;
+            font-size: 1.1em;
+            color: #444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Lab 01 - Hệ tính toán phân bố</h1>
+        <div class="welcome">Chào mừng đến với trang web Lab 01!</div>
+        <h2>Thành viên nhóm</h2>
+        <ul>
+            <li>Huỳnh Phước An - 24520048</li>
+            <li>Nguyễn Chiêu Ân - 24520054</li>
+            <li>Bùi Anh Hào - 24520454</li>
+            <li>Vũ Quang Hậu - 24520468 </li>
+            <!-- Thêm thành viên tại đây nếu cần -->
+        </ul>
+        <div class="ip">Địa chỉ IP máy chủ: <span id="ip">Đang tải...</span></div>
+    </div>
+    <script>
+        fetch('/api/ip').then(res => res.json()).then(data => {
+            document.getElementById('ip').textContent = data.ip;
+        });
+    </script>
+</body>
+
+</html>

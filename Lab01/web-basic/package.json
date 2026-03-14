@@ -1,0 +1,12 @@
+{
+    "name": "lab01-web-basic",
+    "version": "1.0.0",
+    "description": "Lab 01 - Distributed Computing Systems basic web app",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    }
+}
