@@ -26,20 +26,8 @@
             color: #2d6cdf;
         }
 
-        ul {
-            padding-left: 20px;
-        }
-
-        .ip {
-            margin-top: 24px;
-            font-weight: bold;
-            color: #1a8917;
-        }
-
-        .welcome {
-            margin: 18px 0;
-            font-size: 1.1em;
-            color: #444;
+        h2 {
+            color: #f50404;
         }
     </style>
 </head>
@@ -47,21 +35,21 @@
 <body>
     <div class="container">
         <h1>Lab 01 - Hệ tính toán phân bố</h1>
-        <div class="welcome">Chào mừng đến với trang web Lab 01!</div>
-        <h2>Thành viên nhóm</h2>
-        <ul>
-            <li>Huỳnh Phước An - 24520048</li>
-            <li>Nguyễn Chiêu Ân - 24520054</li>
-            <li>Bùi Anh Hào - 24520454</li>
-            <li>Vũ Quang Hậu - 24520468 </li>
-        </ul>
-        <div class="ip">Địa chỉ IP máy chủ: <span id="ip">Đang tải...</span></div>
+        <h3>Chào mừng đến với web của nhóm 9!</h3>
+        <h2 class="server_addr">Địa chỉ IP (fixed): <span id="server_addr">Đang tải...</span></h2>
+        <h2 class="http_host">Địa chỉ IP (floating): <span id="http_host">Đang tải...</span></h2>
     </div>
     <script>
-        fetch('/server-ip')
+        fetch('/server_addr')
             .then(r => r.text())
             .then(data => {
-                document.getElementById('ip').innerText = data;
+                document.getElementById('server_addr').innerText = data;
+            });
+
+        fetch('/http_host')
+            .then(r => r.text())
+            .then(data => {
+                document.getElementById('http_host').innerText = data;
             });
     </script>
 </body>
