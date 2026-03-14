@@ -54,14 +54,15 @@
             <li>Nguyễn Chiêu Ân - 24520054</li>
             <li>Bùi Anh Hào - 24520454</li>
             <li>Vũ Quang Hậu - 24520468 </li>
-            <!-- Thêm thành viên tại đây nếu cần -->
         </ul>
         <div class="ip">Địa chỉ IP máy chủ: <span id="ip">Đang tải...</span></div>
     </div>
     <script>
-        fetch('/api/ip').then(res => res.json()).then(data => {
-            document.getElementById('ip').textContent = data.ip;
-        });
+        fetch('/server-ip')
+            .then(r => r.text())
+            .then(data => {
+                document.getElementById('ip').innerText = data;
+            });
     </script>
 </body>
 
