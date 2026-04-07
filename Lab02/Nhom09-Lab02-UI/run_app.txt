@@ -1,0 +1,5 @@
+Bước 1: Tải xuống thư viện customtkinter
+    pip install customtkinter
+
+Bước 2: Chạy app tại file main.py
+    python main.py
